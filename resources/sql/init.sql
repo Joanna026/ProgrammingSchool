@@ -19,7 +19,7 @@ CREATE TABLE user_group
     PRIMARY KEY (id)
 );
 
-CREATE TABLE excercise
+CREATE TABLE exercise
 (
     id          INT AUTO_INCREMENT,
     title       VARCHAR(255),
@@ -34,10 +34,10 @@ CREATE TABLE solution
     created      DATETIME,
     updated      DATETIME,
     description  TEXT,
-    excercise_id INT(11),
+    exercise_id INT(11),
     users_id     INT(11),
     PRIMARY KEY (id),
-    FOREIGN KEY (excercise_id) REFERENCES excercise (id),
+    FOREIGN KEY (exercise_id) REFERENCES exercise (id),
     FOREIGN KEY (users_id) REFERENCES users (id)
 );
 

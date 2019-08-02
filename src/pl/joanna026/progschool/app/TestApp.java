@@ -3,6 +3,7 @@ package pl.joanna026.progschool.app;
 
 
 import pl.joanna026.progschool.dao.UserDAO;
+import pl.joanna026.progschool.model.Group;
 import pl.joanna026.progschool.model.User;
 import pl.joanna026.progschool.util.DBUtil;
 
@@ -20,7 +21,10 @@ public class TestApp {
 //        testUpdateUser();
 //        testDeleteUser();
 
-        testFindAll();
+//        testFindAll();
+
+        Group group =new Group("grupa1");
+        System.out.println(group);
 
 
     }
@@ -30,7 +34,6 @@ public class TestApp {
         User user1= new User("test1", "test1", "test1");
         User user2= new User("test2", "test2", "test2");
         User user3= new User("test3", "test3", "test3");
-
 
         userDAO.create(user1);
         userDAO.create(user2);
