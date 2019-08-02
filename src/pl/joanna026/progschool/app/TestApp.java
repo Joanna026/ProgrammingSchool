@@ -85,3 +85,8 @@ public class TestApp {
     }
 
 }
+
+//zadanie 5 - do klasy SolutionDAO
+//każdy program w osobnej klasie zad 1 i 4
+//zadanie 2 z konsoli
+//wiele do wielu oceny, jeden do wielu ocena
