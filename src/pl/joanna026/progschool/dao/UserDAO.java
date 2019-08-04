@@ -15,6 +15,7 @@ public class UserDAO {
             "UPDATE users SET email=?, username=?, password=?, user_group_id=? WHERE id=?";
     private static final String DELETE_USER_QUERY = "DELETE FROM users WHERE id=?";
     private static final String FIND_ALL_USERS_QUERY = "SELECT * FROM users";
+    private static final String FIND_ALL_BY_GROUP_QUERY= "SELECT * FROM users WHERE group_id=?";
 
 
     public User create(User user) {
@@ -119,5 +120,27 @@ public class UserDAO {
         User[] tmpUsers = Arrays.copyOf(users, users.length + 1);
         tmpUsers[users.length] = u;
         return tmpUsers;
+    }
+
+    public User[] findAllByGroup(int group_id){
+        try (Connection conn = DBUtil.connect()) {
+            User[] users = new User[0];
+            PreparedStatement statement = conn.prepareStatement(FIND_ALL_BY_GROUP_QUERY);
+            statement.setInt(1,group_id);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                User user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setUsername(resultSet.getString("username"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPassword(resultSet.getString("password"));
+                user.setUser_group_id(resultSet.getInt("user_group_id"));
+                users = addToArray(user, users);
+            }
+            return users;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

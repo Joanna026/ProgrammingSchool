@@ -31,9 +31,9 @@ public class TestApp {
 
     private static void testFindAll() {
         UserDAO userDAO= new UserDAO();
-        User user1= new User("test1", "test1", "test1");
-        User user2= new User("test2", "test2", "test2");
-        User user3= new User("test3", "test3", "test3");
+        User user1= new User("test1", "test1", "test1", 1);
+        User user2= new User("test2", "test2", "test2",2);
+        User user3= new User("test3", "test3", "test3", 3);
 
         userDAO.create(user1);
         userDAO.create(user2);
@@ -78,7 +78,7 @@ public class TestApp {
     }
 
     private static void testCreateUser(){
-        User user = new User("test1@test.pl", "test", "test");
+        User user = new User("test1@test.pl", "test", "test", 1);
         System.out.println(user);
 
         UserDAO userDAO = new UserDAO();
