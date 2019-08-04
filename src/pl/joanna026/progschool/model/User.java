@@ -8,14 +8,16 @@ public class User {
     private String email;
     private String username;
     private String password;
+    private int user_group_id;
 
     public User() {
     }
 
-    public User(String email, String username, String password) {
+    public User(String email, String username, String password, int user_group_id) {
         this.email = email;
         this.username = username;
         this.password = password;
+        this.user_group_id=user_group_id;
     }
 
     public int getId() {
@@ -50,6 +52,14 @@ public class User {
         this.password = password;
     }
 
+    public int getUser_group_id() {
+        return user_group_id;
+    }
+
+    public void setUser_group_id(int user_group_id) {
+        this.user_group_id = user_group_id;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -57,6 +67,7 @@ public class User {
                 ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", user_group_id=" + user_group_id +
                 '}';
     }
 
@@ -66,11 +77,14 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return id == user.id &&
-                Objects.equals(email, user.email);
+                user_group_id == user.user_group_id &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(username, user.username) &&
+                Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email);
+        return Objects.hash(id, email, username, password, user_group_id);
     }
 }
