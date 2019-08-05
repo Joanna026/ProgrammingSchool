@@ -1,27 +1,28 @@
 package pl.joanna026.progschool.app;
 
-import org.graalvm.compiler.lir.LIRInstruction;
 import pl.joanna026.progschool.dao.UserDAO;
 import pl.joanna026.progschool.model.User;
 
 import java.util.Scanner;
 
-public class usersManager {
+public class UsersManager {
 
     public static void main(String[] args) {
-
-        switch (option()) {
-            case "add":
-                addCase();
-            case "edit":
-                editCase();
-                break;
-            case "delete":
-                deleteCase();
-                break;
-            case "quit":
-                break;
-        }
+        String useCase;
+        do {
+            useCase=option();
+            switch (useCase) {
+                case "add":
+                    addCase();
+                    break;
+                case "edit":
+                    editCase();
+                    break;
+                case "delete":
+                    deleteCase();
+                    break;
+            }
+        } while (!useCase.equals("quit"));
     }
 
     private static void addCase() {
