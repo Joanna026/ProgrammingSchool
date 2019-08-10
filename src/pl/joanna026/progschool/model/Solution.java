@@ -1,13 +1,14 @@
 package pl.joanna026.progschool.model;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Objects;
 
 public class Solution {
 
     private int id;
-    private String created;
-    private String updated;
+    private Timestamp created;
+    private Timestamp updated;
     private String description;
     private int exercise_id;
     private int users_id;
@@ -16,7 +17,7 @@ public class Solution {
     public Solution() {
     }
 
-    public Solution(String created, String updated,
+    public Solution(Timestamp created, Timestamp updated,
                     String description, int exercise_id, int users_id) {
         this.created = created;
         this.updated = updated;
@@ -33,19 +34,19 @@ public class Solution {
         this.id = id;
     }
 
-    public String getCreated() {
+    public Timestamp getCreated() {
         return created;
     }
 
-    public void setCreated(String created) {
+    public void setCreated(Timestamp created) {
         this.created = created;
     }
 
-    public String  getUpdated() {
+    public Timestamp  getUpdated() {
         return updated;
     }
 
-    public void setUpdated(String updated) {
+    public void setUpdated(Timestamp updated) {
         this.updated = updated;
     }
 

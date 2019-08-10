@@ -1,9 +1,7 @@
 package pl.joanna026.progschool.app;
 
 import pl.joanna026.progschool.dao.GroupDAO;
-import pl.joanna026.progschool.dao.UserDAO;
 import pl.joanna026.progschool.model.Group;
-import pl.joanna026.progschool.model.User;
 
 import java.util.Scanner;
 
@@ -59,7 +57,7 @@ public class GroupManager {
                 "- add – dodanie grupy,\n" +
                 "- edit – edycja grupy,\n" +
                 "- delete – usunięcie grupy,\n" +
-                "- quit – zakończenie programu.");
+                "- quit – powrót do menu głównego.");
 
         return scanner.nextLine();
     }

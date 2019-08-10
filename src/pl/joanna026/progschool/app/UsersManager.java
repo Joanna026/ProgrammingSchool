@@ -57,7 +57,7 @@ public class UsersManager {
                 "- add – dodanie użytkownika,\n" +
                 "- edit – edycja użytkownika,\n" +
                 "- delete – usunięcie użytkownika,\n" +
-                "- quit – zakończenie programu.");
+                "- quit – powrót do menu głównego.");
 
         return scanner.nextLine();
     }

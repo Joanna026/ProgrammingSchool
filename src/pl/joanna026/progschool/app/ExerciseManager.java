@@ -59,7 +59,7 @@ public class ExerciseManager {
                 "- add – dodanie zadania,\n" +
                 "- edit – edycja zadania,\n" +
                 "- delete – usunięcie zadania,\n" +
-                "- quit – zakończenie programu.");
+                "- quit – powrót do menu głównego.");
 
         return scanner.nextLine();
     }
